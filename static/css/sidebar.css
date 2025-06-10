@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Sidebar */
+sidebar {
+  color: #fff;
+  width: 200px;
+  padding-left: 20px;
+  height: 100vh;
+  background-image: linear-gradient(30deg , #6c0372, #9f521b);
+  border-top-right-radius: 50px;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+/* Links do Sidebar */
+sidebar a {
+  font-size: 12px;
+  color: #fff;
+  display: block;
+  padding: 12px;
+  padding-left: 20px;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+sidebar a:hover {
+  color: #ff5e00;
+  background: #fff;
+  outline: none;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+sidebar a i {
+  margin-right: 5px;
+}
+
+sidebar a:hover::after {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  bottom: 100%;
+  right: 0;
+  height: 35px;
+  width: 35px;
+  border-bottom-right-radius: 18px;
+  box-shadow: 0 20px 0 0 #fff;
+}
+
+sidebar a:hover::before {
+  content: "";
+  position: absolute;
+  background-color: transparent;
+  top: 38px;
+  right: 0;
+  height: 35px;
+  width: 35px;
+  border-top-right-radius: 18px;
+  box-shadow: 0 -20px 0 0 #fff;
+}
+
+sidebar p {
+  margin: 0;
+  padding: 40px 0;
+}
+
+/* Header fora do Sidebar */
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 200px; /* Largura do sidebar */
+  right: 0;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 22px;
+  color: #6c0372;
+  font-weight: 600;
+}
+
+.content {
+  margin-left: 200px;
+  padding: 2px 10px 20px 40px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+
+.buscador input {
+  padding: 8px 12px;
+  border: 2px solid #6c0372;
+  border-radius: 8px;
+  outline: none;
+  width: 300px;
+  transition: 0.3s;
+}
+
+.buscador input:focus {
+  border-color: #9f521b;
+}
+
+.buscador button {
+  background-color: #6c0372;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buscador button:hover {
+  background-color: #9f521b;
+}

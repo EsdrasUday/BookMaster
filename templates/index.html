@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <title>BookMaster</title>
+</head>
+
+
+<body>
+    <sidebar>
+        <p> Menu Gerenciar </p>
+        <a href="#" onclick="mostrarSecao('catalogo')"><i class="fa-solid fa-book-open"></i>Catálogo de Livros</a>
+        <a href="#" onclick="mostrarSecao('cadastroUsuario')"><i class="fa-solid fa-user-plus"></i>Cadastrar Cliente</a>
+        <a href="#" onclick="mostrarSecao('cadastroLivro')"><i class="fa-solid fa-book"></i>Cadastrar Livro</a>
+        <a href="#" onclick="mostrarSecao('emprestimo')"><i class="fa-solid fa-arrows-rotate"></i>Empréstimo</a>
+        <a href="#" onclick="listarUsuarios()"><i class="fa-solid fa-users"></i>Lista de clientes</a>
+        <a href="#" onclick="mostrarSecao('devolucao')"><i class="fa-solid fa-check-double"></i>Registrar Devolução</a>
+        <a href="#" onclick="listarEmprestimos()"><i class="fa-solid fa-book-bookmark"></i>Livros emprestados</a>
+        
+
+    </sidebar>
+    <main class="content">
+        <h1 class="titulos">BookMaster Sistema Bibliotecário</h1>
+
+
+        <section id="catalogo" class="buscador">
+            
+            <input type="text" id="filtro-livros" placeholder="Pesquise aqui seu livro!" />
+            <h2>Catálogo de Livros</h2>
+            <div id="lista-livros" class="livros-grid">
+                
+            </div>
+        </section>
+
+
+        <section id="cadastroLivro" class="secao" style="display:none;">
+            <h2>Cadastrar Livro</h2>
+
+            <form action="/cadastrar_livro" method="POST" enctype="multipart/form-data">
+
+                <!-- Upload de imagem -->
+                <div class="upload-box">
+                    <label for="imagem" class="upload-label">
+                        <i class="fa fa-upload"></i> Selecionar Imagem
+                    </label>
+                    <input type="file" id="imagem" name="imagem" accept="image/*" required>
+                    <span id="file-name">Nenhum arquivo selecionado</span>
+                </div>
+
+                <!-- Dados do livro -->
+                <input type="text" id="isbn" name="isbn" placeholder="ISBN" required>
+                <input type="text" id="titulo" name="titulo" placeholder="Título" required>
+                <input type="text" id="autor" name="autor" placeholder="Autor" required>
+                <input type="number" id="ano" name="ano" placeholder="Ano" required>
+
+                <!-- Botão -->
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+
+
+        <section id="cadastroUsuario" class="secao" style="display:none;">
+            <h2>Cadastrar Usuário</h2>
+            <form action="/cadastrar_usuario" method="POST">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="text" name="cpf" placeholder="CPF" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </section>
+        
+        <section id="emprestimo" class="secao" style="display:none;">
+            <h2>Realizar Empréstimo</h2>
+            <form id="form-emprestimo">
+                <input type="text" id="livroIdEmp" name="livroIdEmp" placeholder="ISBN do Livro" required>
+                <input type="number" id="usuarioIdEmp" name="usuarioIdEmp" placeholder="ID do Usuário" required>
+                <button type="submit">Emprestar</button>
+            </form>
+            <p id="msg-emprestimo"></p>
+        </section>
+
+        
+        <section id="devolucao" class="secao" style="display:none;">
+            <h2>Registrar Devolução</h2>
+            <form id="form-devolucao">
+                <input type="text" id="livroIdDev" name="livroIdDev" placeholder="ISBN do Livro" required>
+                <button type="submit">Devolver</button>
+            </form>
+            <p id="msg-devolucao"></p>
+        </section>
+
+
+        <section id="usuarios" class="secao" style="display:none;">
+            <h2>Lista de Usuários</h2>
+            <table id="tabela-usuarios">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Js vai mudar aqui -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="emprestimos" class="secao" style="display:none;">
+            <h2>Livros Emprestados</h2>
+            <table id="tabela-emprestimos">
+                <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Título</th>
+                    <th>Usuário</th>
+                    <th>Email</th>
+                    <th>Data do Empréstimo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- conteúdo será inserido dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+
+
+        <div id="resultado"></div>
+    </main>
+    <script src="{{ url_for('static', filename='js/secoes.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/livro.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
