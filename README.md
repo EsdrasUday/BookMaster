@@ -1,4 +1,13 @@
 [![Generic badge](https://img.shields.io/badge/Made%20with-Python-<COLOR>.svg)](https://python.org)
+## 🛠️ Tecnologias Utilizadas
+
+[![Feito com Python](https://img.shields.io/badge/Feito%20com-Python-blue?logo=python)](https://www.python.org)
+[![Flask](https://img.shields.io/badge/Backend-Flask-lightgrey?logo=flask)](https://flask.palletsprojects.com/)
+[![MySQL](https://img.shields.io/badge/Banco-MySQL-blue?logo=mysql)](https://www.mysql.com/)
+[![HTML5](https://img.shields.io/badge/Frontend-HTML5-orange?logo=html5)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/Estilo-CSS3-blue?logo=css3)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/Dinâmica-JavaScript-yellow?logo=javascript)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+
 [![GitHub issues](https://img.shields.io/github/issues/EsdrasUday/UDownloader?color=red)](https://github.com/EsdrasUday/BookMaster/issues)
 [![GitHub followers](https://img.shields.io/github/followers/EsdrasUday?label=Follow&style=social)](https://github.com/EsdrasUday)
 
